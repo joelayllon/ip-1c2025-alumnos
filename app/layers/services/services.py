@@ -34,10 +34,12 @@ def filterByCharacter(name):
 # función que filtra las cards según su tipo.
 def filterByType(type_filter):
     filtered_cards = []
-
-    for card in getAllImages():
+    listado = getAllImages()  # obtenemos todas las cards
+    # debe filtrar las cards por el tipo recibido por parámetro.
+    for card in listado:
         # debe verificar si la casa de la card coincide con la recibida por parámetro. Si es así, se añade al listado de filtered_cards.
-        filtered_cards.append(card)
+        if card.types[0].lower() == type_filter.lower():
+            filtered_cards.append(card)
 
     return filtered_cards
 
